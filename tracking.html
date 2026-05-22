@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkiletiQ Logistics Tracking</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+}
+
+input{
+    width:90%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    background:#00bfff;
+    border:none;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.result{
+    margin-top:30px;
+    font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>SkiletiQ Logistics</h1>
+<h2>Track Your Order</h2>
+
+<input type="text" id="trackingNumber" placeholder="Enter Tracking Number">
+
+<br>
+
+<button onclick="trackOrder()">Track Order</button>
+
+<div class="result" id="result"></div>
+</div>
+
+<script>
+function trackOrder(){
+
+let tracking = document.getElementById("trackingNumber").value;
+let result = document.getElementById("result");
+
+if(tracking === "SK123"){
+    result.innerHTML = "📦 Status: In Transit";
+}
+else if(tracking === "SK456"){
+    result.innerHTML = "🚚 Status: Out for Delivery";
+}
+else if(tracking === "SK789"){
+    result.innerHTML = "✅ Status: Delivered";
+}
+else{
+    result.innerHTML = "❌ Tracking Number Not Found";
+}
+
+}
+</script>
+
+</body>
+</html>
