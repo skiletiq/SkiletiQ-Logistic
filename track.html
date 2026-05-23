@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Track Parcel</title>
+</head>
+<body>
+
+<h2>Track Your Parcel</h2>
+
+<input id="track" placeholder="Tracking Number">
+
+<button onclick="trackParcel()">
+Track
+</button>
+
+<p id="result"></p>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getFirestore,
+  doc,
+  getDoc
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC0k_ytMpivSC0f0K6MfRsKoW-dZnR4PLg",
+  authDomain: "skiletiq-logistics.firebaseapp.com",
+  projectId: "skiletiq-logistics",
+  storageBucket: "skiletiq-logistics.firebasestorage.app",
+  messagingSenderId: "281638604140",
+  appId: "1:281638604140:web:240a09f8b51352c0de3749",
+  measurementId: "G-FPPERXPV0M"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+window.trackParcel = async function() {
+
+  let tracking =
+  document.getElementById("track").value;
+
+  const docRef =
+  doc(db, "parcels", tracking);
+
+  const docSnap =
+  await getDoc(docRef);
+
+  if(docSnap.exists()) {
+
+    let data = docSnap.data();
+
+    document.getElementById("result").innerHTML =
+      "Status: " + data.status +
+      "<br><br>Location: " + data.location;
+
+  } else {
+
+    document.getElementById("result").innerHTML =
+      "Tracking number not found";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
