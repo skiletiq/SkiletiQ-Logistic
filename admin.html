@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SkiletiQ Admin</title>
+</head>
+<body>
+
+<h2>Add Tracking Number</h2>
+
+<input id="tracking" placeholder="Tracking Number"><br><br>
+
+<input id="status" placeholder="Status"><br><br>
+
+<input id="location" placeholder="Location"><br><br>
+
+<button onclick="addParcel()">
+Add Parcel
+</button>
+
+<p id="msg"></p>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getFirestore,
+  doc,
+  setDoc
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC0k_ytMpivSC0f0K6MfRsKoW-dZnR4PLg",
+  authDomain: "skiletiq-logistics.firebaseapp.com",
+  projectId: "skiletiq-logistics",
+  storageBucket: "skiletiq-logistics.firebasestorage.app",
+  messagingSenderId: "281638604140",
+  appId: "1:281638604140:web:240a09f8b51352c0de3749",
+  measurementId: "G-FPPERXPV0M"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+window.addParcel = async function() {
+
+  let tracking =
+  document.getElementById("tracking").value;
+
+  let status =
+  document.getElementById("status").value;
+
+  let location =
+  document.getElementById("location").value;
+
+  await setDoc(doc(db, "parcels", tracking), {
+    status: status,
+    location: location
+  });
+
+  document.getElementById("msg").innerHTML =
+    "Parcel Added Successfully!";
+
+}
+
+</script>
+
+</body>
+</html>
