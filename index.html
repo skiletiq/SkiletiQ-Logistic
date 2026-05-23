@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SkiletiQ Logistics & Store</title>
+  <title>SkiletiQ Logistics</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -20,8 +21,8 @@
     }
 
     header{
-      background:black;
-      color:white;
+      background:#000;
+      color:#fff;
       padding:20px;
       display:flex;
       justify-content:space-between;
@@ -40,10 +41,10 @@
     }
 
     .hero{
-      background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');
+      height:500px;
+      background:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1400&auto=format&fit=crop');
       background-size:cover;
       background-position:center;
-      height:400px;
       display:flex;
       justify-content:center;
       align-items:center;
@@ -53,103 +54,110 @@
 
     .hero-content{
       background:rgba(0,0,0,0.6);
-      padding:30px;
+      padding:40px;
       border-radius:10px;
+      width:90%;
+      max-width:700px;
     }
 
     .hero h2{
-      font-size:45px;
-      margin-bottom:10px;
+      font-size:50px;
+      margin-bottom:20px;
     }
 
     .hero p{
-      margin-bottom:20px;
-      font-size:18px;
+      font-size:20px;
+      margin-bottom:25px;
+      line-height:1.5;
     }
 
     .btn{
       background:#ff6600;
       color:white;
-      padding:12px 25px;
-      border:none;
-      border-radius:5px;
+      padding:15px 30px;
       text-decoration:none;
-      font-weight:bold;
-    }
-
-    .products{
-      padding:50px 20px;
-      text-align:center;
-    }
-
-    .products h2{
-      margin-bottom:30px;
-      font-size:35px;
-    }
-
-    .product-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
-
-    .product-card{
-      background:white;
-      padding:20px;
-      border-radius:10px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .product-card img{
-      width:100%;
-      border-radius:10px;
-      height:220px;
-      object-fit:cover;
-    }
-
-    .product-card h3{
-      margin:15px 0 10px;
-    }
-
-    .price{
-      color:#ff6600;
-      font-size:22px;
-      margin-bottom:15px;
-      font-weight:bold;
-    }
-
-    .order-btn{
-      background:black;
-      color:white;
-      padding:10px 20px;
-      border:none;
       border-radius:5px;
-      cursor:pointer;
-      text-decoration:none;
+      font-weight:bold;
       display:inline-block;
     }
 
     .services{
-      background:white;
-      padding:50px 20px;
+      padding:60px 20px;
       text-align:center;
+      background:white;
     }
 
     .services h2{
-      margin-bottom:30px;
-      font-size:35px;
+      font-size:38px;
+      margin-bottom:40px;
     }
 
-    .service-boxes{
+    .service-container{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
     }
 
-    .service{
+    .service-box{
       background:#f5f5f5;
       padding:30px;
       border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .service-box h3{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .tracking{
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    .tracking h2{
+      font-size:38px;
+      margin-bottom:20px;
+    }
+
+    .tracking input{
+      width:300px;
+      max-width:90%;
+      padding:15px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      margin-bottom:15px;
+    }
+
+    .tracking button{
+      padding:15px 25px;
+      border:none;
+      background:black;
+      color:white;
+      border-radius:5px;
+      cursor:pointer;
+    }
+
+    .contact{
+      background:white;
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    .contact h2{
+      font-size:38px;
+      margin-bottom:20px;
+    }
+
+    .contact a{
+      display:inline-block;
+      margin-top:20px;
+      background:#25D366;
+      color:white;
+      padding:15px 30px;
+      text-decoration:none;
+      border-radius:5px;
+      font-weight:bold;
     }
 
     footer{
@@ -157,113 +165,107 @@
       color:white;
       text-align:center;
       padding:20px;
-      margin-top:40px;
     }
 
   </style>
 </head>
+
 <body>
 
   <header>
-    <h1>SkiletiQ Logistics & Store</h1>
+
+    <h1>SkiletiQ Logistics</h1>
 
     <nav>
       <a href="#">Home</a>
-      <a href="#products">Products</a>
       <a href="#services">Services</a>
-      <a href="https://wa.me/27671234567">Contact</a>
+      <a href="#tracking">Tracking</a>
+      <a href="#contact">Contact</a>
     </nav>
+
   </header>
 
   <section class="hero">
+
     <div class="hero-content">
-      <h2>Shop & Delivery Made Easy</h2>
+
+      <h2>Fast & Reliable Courier Delivery</h2>
 
       <p>
-        Buy iPhones, Electronics, Fashion and get fast delivery.
+        We deliver parcels, documents and packages safely and quickly across South Africa.
       </p>
 
-      <a href="#products" class="btn">Shop Now</a>
-    </div>
-  </section>
-
-  <section class="products" id="products">
-
-    <h2>Featured Products</h2>
-
-    <div class="product-grid">
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=1200&auto=format&fit=crop">
-
-        <h3>iPhone 15 Pro Max</h3>
-
-        <p class="price">R18499</p>
-
-        <a class="order-btn"
-        href="https://wa.me/27710465136?text=Ngifuna%20ukuorder%20iPhone%2015%20Pro%20Max">
-          Order Now
-        </a>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=1200&auto=format&fit=crop">
-
-        <h3>Samsung S24 Ultra</h3>
-
-        <p class="price">R24 999</p>
-
-        <a class="order-btn"
-        href="https://wa.me/27710465136?text=Ngifuna%20ukuorder%20Samsung%20S24%20Ultra">
-          Order Now
-        </a>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=1200&auto=format&fit=crop">
-
-        <h3>Apple Watch</h3>
-
-        <p class="price">R8 500</p>
-
-        <a class="order-btn"
-        href="https://wa.me/27710465136?text=Ngifuna%20ukuorder%20Apple%20Watch">
-          Order Now
-        </a>
-      </div>
+      <a href="https://wa.me/27710465136" class="btn">
+        Book Delivery
+      </a>
 
     </div>
+
   </section>
 
   <section class="services" id="services">
 
     <h2>Our Services</h2>
 
-    <div class="service-boxes">
+    <div class="service-container">
 
-      <div class="service">
-        <h3>Fast Delivery</h3>
-        <p>Quick nationwide delivery services.</p>
+      <div class="service-box">
+        <h3>Same Day Delivery</h3>
+        <p>
+          Fast same-day parcel delivery service.
+        </p>
       </div>
 
-      <div class="service">
-        <h3>Secure Payments</h3>
-        <p>Safe and trusted payment options.</p>
+      <div class="service-box">
+        <h3>Door To Door</h3>
+        <p>
+          We collect and deliver directly to your location.
+        </p>
       </div>
 
-      <div class="service">
-        <h3>24/7 Support</h3>
-        <p>We are always available to help you.</p>
+      <div class="service-box">
+        <h3>Nationwide Courier</h3>
+        <p>
+          Reliable deliveries across South Africa.
+        </p>
       </div>
 
     </div>
 
   </section>
 
-  <footer>
+  <section class="tracking" id="tracking">
+
+    <h2>Track Your Parcel</h2>
+
+    <input type="text" placeholder="Enter Tracking Number">
+
+    <br>
+
+    <button>Track Parcel</button>
+
+  </section>
+
+  <section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
     <p>
-      © 2026 SkiletiQ Logistics & Store | All Rights Reserved
+      Need a delivery? Contact us on WhatsApp.
     </p>
+
+    <a href="https://wa.me/27710465136">
+      Chat on WhatsApp
+    </a>
+
+  </section>
+
+  <footer>
+
+    <p>
+      © 2026 SkiletiQ Logistics | All Rights Reserved
+    </p>
+
   </footer>
 
 </body>
