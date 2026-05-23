@@ -21,16 +21,37 @@
     }
 
     header{
-      background:#000;
+      background:#050b18;
       color:#fff;
       padding:20px;
       display:flex;
       justify-content:space-between;
       align-items:center;
+      flex-wrap:wrap;
     }
 
-    header h1{
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .logo img{
+      width:90px;
+      height:90px;
+      object-fit:contain;
+    }
+
+    .logo h1{
       font-size:28px;
+      color:white;
+    }
+
+    .logo p{
+      color:#1e90ff;
+      font-size:12px;
+      letter-spacing:2px;
+      margin-top:5px;
     }
 
     nav a{
@@ -72,7 +93,7 @@
     }
 
     .btn{
-      background:#ff6600;
+      background:#1e90ff;
       color:white;
       padding:15px 30px;
       text-decoration:none;
@@ -132,7 +153,7 @@
     .tracking button{
       padding:15px 25px;
       border:none;
-      background:black;
+      background:#050b18;
       color:white;
       border-radius:5px;
       cursor:pointer;
@@ -161,48 +182,30 @@
     }
 
     footer{
-      background:black;
+      background:#050b18;
       color:white;
       text-align:center;
       padding:20px;
     }
 
-  <.logo{
-   display:flex;
-   align-items:center;
-   gap:15px;
-}
-
-.logo img{
-   width:80px;
-   height:80px;
-   object-fit:contain;
-}
-
-.logo h1{
-   color:white;
-   font-size:28px;
-}
-
-.logo p{
-   color:#1e90ff;
-   font-size:14px;
-   letter-spacing:2px;
-}>
+  </style>
 </head>
 
 <body>
 
   <header>
 
-    <<div class="logo">
-   <img src="logo.jpg" alt="SkiletiQ Logo">
+    <div class="logo">
 
-   <div>
-      <h1>SkiletiQ Logistics</h1>
-      <p>Fast • Safe • Reliable</p>
-   </div>
-</div>>
+      <!-- CHANGE THIS NAME IF YOUR IMAGE NAME IS DIFFERENT -->
+      <img src="logo.jpg" alt="SkiletiQ Logo">
+
+      <div>
+        <h1>SkiletiQ Logistics</h1>
+        <p>FAST • SAFE • RELIABLE</p>
+      </div>
+
+    </div>
 
     <nav>
       <a href="#">Home</a>
